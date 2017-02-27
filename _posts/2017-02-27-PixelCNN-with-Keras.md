@@ -16,7 +16,7 @@ Keras has two ways of defining models, the [Sequential](https://keras.io/getting
 
 We will use the Functional API because we need that additional flexibility, for example - the Sequential model limits the amount of outputs of the model to 1, but to model RGB channels, we will need 3 output units, one for each channel. As the model gets more complex (e.g Gated PixelCNN) it will become clearer why Functional API is a no-brainer for projects like this.
 
-Out input shape(excluding batch) should be: `(height, width, channels)`.  
+Our input shape(excluding batch) should be: `(height, width, channels)`.  
 More specifically, MNIST (grayscale) input shape looks like this `(28, 28, 1)` and CIFAR `(32, 32, 3)`.  
 
 Let's start simple, we'll do a PixelCNN for grayscale MNIST first.
