@@ -1,16 +1,9 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Who am I?
 ---
 
-My name is Inigo Montoya. I have the following qualities:
-
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I am a hacker who landed a job in deep learning, but then quickly realized that hackers are the minority here.  
+Deep learning is such a fasctionating field with lots of potential and we need more deep learning hackers who can exploit and harness this great potential.  
+This blog is my attempt to help fellow hackers get into deep learning.
