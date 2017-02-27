@@ -29,7 +29,7 @@ input_img = Input(shape)
 
 
 ### Architecture
-Since the paper focuses on PixelRNN, it fails to provide a clear explanation of how the architecture of PixelCNN should look like, however, it does a good job of describing the big picture, but it is not enough for actually implementing PixelCNN.  
+Since the paper focuses on PixelRNN, it fails to provide a clear explanation on how the architecture of PixelCNN should look like, however, it does a good job of describing the big picture, but it is not enough for actually implementing PixelCNN.  
 
 Here's the architecture I came up with for grayscale MNIST (with only 1 residual block for simplicity):
 
