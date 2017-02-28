@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PixelCNN with Keras
+title: Grayscale PixelCNN with Keras
 category: papers
 ---
 *For full source-code check my [repository](https://github.com/israelg99/eva).*  
@@ -33,7 +33,7 @@ Since the paper focuses on PixelRNN, it fails to provide a clear explanation on 
 
 Here's the architecture I came up with for grayscale MNIST (with only 1 residual block for simplicity):
 
-![Simple PixelCNN Architecture]({{ site.baseurl }}/images/2017-02-27-PixelCNN-with-Keras/model.png)  
+![Simple PixelCNN Architecture]({{ site.baseurl }}/images/2017-02-27-Grayscale-PixelCNN-with-Keras/model.png)  
 
 *Note that PixelCNN has to preserve the spatial dimension of the input, which is not shown in the graph above.*
 
@@ -43,7 +43,7 @@ We already defined our input, and as you can see in the architecture graph, the 
 
 #### How to implement grayscale masks?
 Here's a picture for reference:  
-![Grayscale Masked Convolution2D Type 'A']({{ site.baseurl }}/images/2017-02-27-PixelCNN-with-Keras/grayscale_mask_typeA.png)  
+![Grayscale Masked Convolution2D Type 'A']({{ site.baseurl }}/images/2017-02-27-Grayscale-PixelCNN-with-Keras/grayscale_mask_typeA.png)  
 The difference between type `A` and `B` masks in grayscale images is that type `A` also masks the center pixel.  
 Keep in mind that masks for grayscale images are simpler than RGB masks, but we'll get to RGB masks too.
 
