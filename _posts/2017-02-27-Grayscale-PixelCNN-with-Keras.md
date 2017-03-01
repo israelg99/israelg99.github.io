@@ -344,7 +344,7 @@ for pic in pixels:
 ### What's Next
 That's all about Grayscale PixelCNN.
 
-In the next post I'll explain how to implement a multi-channel(RGB) PixelCNN.
+In another post I'll explain how to implement a multi-channel(RGB) PixelCNN.  
 To do so, the following changes would be made:
 
 1. Multi-channel masks.
