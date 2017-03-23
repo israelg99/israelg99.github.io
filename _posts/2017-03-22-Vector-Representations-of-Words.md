@@ -13,7 +13,7 @@ Vector representations of words (word embeddings) can overcome these obstacles.
 
 ### What are word embeddings?
 Word embeddings is simply a vector representations of words.  
-![VSM]({{ site.baseurl }}/images/2017-03-22-Vector-Representations-of-Words/vsm.png)  
+![VSM]({{ site.baseurl }}/images/2017-03-22-Vector-Representations-of-Words/vsm.svg)  
 Specifically, it is a vector space model (VSM) which represents words in a continuous vector space such that words that share common contexts and semantics are located in close proximity to one another in the space.  
 ![distance-words]({{ site.baseurl }}/images/2017-03-22-Vector-Representations-of-Words/sweden_cosine_distance.png)  
 
