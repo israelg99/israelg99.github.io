@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Grayscale PixelCNN with Keras
-category: papers
+category: voice
 ---
 *For full source-code check my [repository](https://github.com/israelg99/eva).*  
 *This post is based on the [Pixel Recurrent Neural Networks](https://arxiv.org/pdf/1601.06759.pdf) paper.*
