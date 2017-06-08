@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to Word2Vec
+title: Word2Vec Explained
 category: nlp
 ---
 *Based on my previous post: [Vector Representations of Words](https://israelg99.github.io/2017-03-22-Vector-Representations-of-Words/).*
@@ -15,7 +15,7 @@ Word2Vec is a particularly computationally-efficient predictive model for learni
 It comes in two flavors, the Continuous Bag-of-Words (CBOW) model and the Skip-Gram model.  
 Algorithmically, these models are similar.  
 
-![distance-words]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/word2vec_diagrams.png)  
+![distance-words]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/word2vec_diagrams.png)  
 
 #### Continuous Bag-of-Words (CBOW)
 CBOW predicts target words (e.g. 'mat') from the surrounding context words ('the cat sits on the').  
@@ -41,28 +41,28 @@ The hidden layer is a standard fully-connected (Dense) layer whose weights are t
 
 The output layer outputs probabilities for the target words from the vocabulary.  
 
-![word2vec-architecture]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/skip_gram_net_arch.png)  
+![word2vec-architecture]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/skip_gram_net_arch.png)  
 
 >The input to this network is a one-hot vector representing the input word, and the label is also a one-hot vector representing the target word, however, the network's output is a probability distribution of target words, not *necessarily* a one-hot vector like the labels.
 
 The rows of the hidden layer weight matrix, are actually the word vectors (word embeddings) we want!  
 
-![hidden-layer-word-vectors]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/word2vec_weight_matrix_lookup_table.png)  
+![hidden-layer-word-vectors]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/word2vec_weight_matrix_lookup_table.png)  
 
 The hidden layer operates as a lookup table. The output of the hidden layer is just the “word vector” for the input word.  
 More concretely, if you multiply a `1 x 10,000 one-hot vector` by a `10,000 x 300 matrix`, it will effectively just select the matrix row corresponding to the '1'.  
 
-![hidden-layer-lookup]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/matrix_mult_w_one_hot.png)  
+![hidden-layer-lookup]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/matrix_mult_w_one_hot.png)  
 
 The end goal of all of this is to learn this hidden layer weight matrix and then toss the output layer when we’re done!
 
 The output layer is simply a softmax activation function:  
 
-![softmax]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/softmax.svg)  
+![softmax]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/softmax.svg)  
 
 Here is a high-level illustration of the architecture:  
 
-![word2vec-architecture]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/output_weights_function.png)  
+![word2vec-architecture]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/output_weights_function.png)  
 
 ### Semantic and syntactic relationships
 So how Word2Vec can help answer our questions in the beginning of the post?  
@@ -70,14 +70,14 @@ Technically, If different words are similar in context, then Word2Vec should hav
 
 Word2Vec is able to capture multiple different degrees of similarity between words, such that semantic and syntactic patterns can be reproduced using vector arithmetic. Patterns such as “Man is to Woman as Brother is to Sister” can be generated through algebraic operations on the vector representations of these words such that the vector representation of “Brother” - ”Man” + ”Woman” produces a result which is closest to the vector representation of “Sister” in the model. Such relationships can be generated for a range of semantic relations (such as Country—Capital) as well as syntactic relations (e.g. present tense—past tense).  
 
-![relationships]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/linear-relationships.png)  
+![relationships]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/linear-relationships.png)  
 
 ### Training algorithm
 A Word2vec model can be trained with hierarchical softmax and/or negative sampling, usually, just negative sampling is used.  
 
 Note from my [Vector Representations of Words](https://israelg99.github.io/2017-03-22-Vector-Representations-of-Words/) post:
 > Traditionally, predictive models are trained using the maximum likelihood principle to maximize the probability of the next words given the previous words in terms of a softmax function over all the vocabulary words.  
-![relationships]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/softmax-nplm.png)  
+![relationships]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/softmax-nplm.png)  
 However, this training procedure is quite computationally expensive given a large vocabulary set, because we need to compute and normalize all vocabulary words at **each training step**. Therefore many models provide different ways of reducing computation.
 
 The same applies for Word2Vec, even though the network is shallow, just 2-layers, it is extremely wide, therefore, each of its training procedures provides a unique way of reducing computation.
@@ -91,7 +91,7 @@ Negative sampling reduces computation by sampling just `N` negative instances al
 Technically, negative sampling ignores most of the '0' in the one-hot label word vector, and only propagates and updates the weights for the target and a few negative classes which were randomly sampled.  
 More concretely, negative sampling samples negative instances(words) along with the target word and minimizes the log-likelihood of the sampled negative instances while maximizing the log-likelihood of the target word.
 
-![relationships]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/nce-nplm.png)  
+![relationships]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/nce-nplm.png)  
 
 #### How the negative samples are chosen?
 The negative samples are chosen using a unigram distribution.
@@ -119,7 +119,7 @@ Quality of word embedding increases with higher dimensionality. However, after r
 The size of the context window determines how many words before and after a given word would be included as context words of the given word. According to the authors' note, the recommended value is 10 for skip-gram and 5 for CBOW.  
 Here is an example of Skip-Gram with context window of size 2:  
 
-![context-window-skip-grams]({{ site.baseurl }}/images/2017-03-23-Introduction-to-Word2Vec/training_data.png)  
+![context-window-skip-grams]({{ site.baseurl }}/images/2017-03-23-Word2Vec-Explained/training_data.png)  
 
 ### Open-source implementations
 - [Google's Word2Vec in C](https://github.com/dav/word2vec)
