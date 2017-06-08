@@ -8,16 +8,16 @@ When bored and talented engineers get all their real-life problems figured out a
 Distributed computing is where a set of computers interact with each other to achieve a common goal.
 
 #### But not so quickly...
-Computer programs, similarily to geeks, have difficulties sometimes agreeing with each other, for example they may disagree on some data value, this is especially problematic in systems where performance is critical.  
+In distributed settings, computer programs, similarly to geeks, have difficulties sometimes agreeing with each other, for example they may disagree on some data value, this is especially problematic in systems where performance is critical.  
 
-Fortunately, there are various algorithms available to solve this issue quite effectivly, those algorithms are called consensus algorithms, Raft and Paxos are good examples.
+Fortunately, there are various algorithms available to solve this issue quite effectively, those algorithms are called consensus algorithms, Raft and Paxos are good examples.
 
-Paxos and Raft are similar algorithms, but Raft is easier to understand and generally a better algorithm, let's jump right in.
+Paxos and Raft are similar algorithms, but Raft is easier to understand and generally the better algorithm, let's jump right in.
 
 ### Raft
 ![]({{ site.baseurl }}/images/2017-06-07-Introduction-to-Consensus-Algorithms/raft-logo.png){:height="240x" width="240px"}  
 
-Raft started as a goal to take the unecessery complex Paxos algorithm and strip away all of its shittiness.
+Raft started as a goal to take the unnecessary complex Paxos algorithm and strip away all of its shittiness.
 
 This resulted in Raft being simpler and more understandable algorithm than Paxos yet being safe and even have additional features.
 
@@ -45,7 +45,7 @@ The timeout values of each node should be spread out within a reasonable interva
 
 #### How updates work?
 This process is called Log Replication in Raft.  
-Whenever the leader receives new changes from the client, the changes are not yet commited, the leader first sends an update to all of its followers and waits for their confirmation, once the leader receives confirmation from the majority of its followers the changes are commited.
+Whenever the leader receives new changes from the client, the changes are not yet committed, the leader first sends an update to all of its followers and waits for their confirmation, once the leader receives confirmation from the majority of its followers the changes are committed.
 
 ### Closing note
 I hope I gave you a good introduction to consensus algorithms, and until next time.
