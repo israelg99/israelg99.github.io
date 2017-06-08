@@ -47,7 +47,7 @@ The timeout values of each node should be spread out within a reasonable interva
 This process is called Log Replication in Raft.  
 Whenever the leader receives new changes from the client, the changes are not yet commited, the leader first sends an update to all of its followers and waits for their confirmation, once the leader receives confirmation from the majority of its followers the changes are commited.
 
-### Conclusion
+### Closing note
 I hope I gave you a good introduction to consensus algorithms, and until next time.
 
 **Happy engineering.**
