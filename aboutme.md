@@ -1,9 +1,11 @@
 ---
 layout: page
 title: About me
-subtitle: Who am I?
+subtitle: A good guy
 ---
 
-I am a hacker who landed a job in deep learning, but then quickly realized that hackers are the minority here.  
-Deep learning is such a fascinating field with lots of potential and we need more deep learning hackers who can exploit and harness this great potential.  
-This blog is my attempt to help fellow hackers get into deep learning.
+First and foremost I am a hacker at heart.
+
+Besides just hacking all day, I also like to workout a lot, it makes me satisfied when I perceive my body as something more than just a transportation vehicle for my brain.
+
+I enjoy company too, no evening is better than to drink beer with friends and just laugh at nerdy jokes, by the way if you're one of those guys then contact me.
