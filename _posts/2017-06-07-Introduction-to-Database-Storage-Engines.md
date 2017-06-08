@@ -22,6 +22,7 @@ It should be no surprise that storage engines favour trees over other data struc
 1. The data stored in trees is ordered hierarchically which is effcient to sort and search in a range.
 2. Trees scale well. They start small and can grow neatly to even enormous sizes. Unlike hashes which have a fixed size that can be too big or too small.
 
+
 #### B+ Tree
 Before jumping into B+ trees I suggest to read [what B-tree is](https://www.wikiwand.com/en/B-tree).  
 But for the most part B-tree is a tree such that each node:
@@ -34,6 +35,7 @@ Another way to look at it is that in a B+ tree all leaves are at the same distan
 ![]({{ site.baseurl }}/images/2017-06-07-Introduction-to-Database-Storage-Engines/btree-6.png)
 
 More in-depth overview of B+ trees [here](https://www.wikiwand.com/en/B%2B_tree).
+
 
 #### LSM Tree
 Log-structured merge-tree (LSM tree) is a mix between a data structure and an optimization algorithm, it is based on the fact that random operations are much slower than sequential ones, therefore random operations are to be avoided.
@@ -78,7 +80,7 @@ Applications use LevelDB as a library, as it does not provide a server or comman
 LevelDB uses LSM trees as its data structure, which means it performs much of the work in memory and occasionally syncs the data to disk. Writes are fast but reads are slow.
 
 #### RocksDB
-![]({{ site.baseurl }}/images/2017-06-07-Introduction-to-Database-Storage-Engines/Rocksdb-icon.svg.png)
+![]({{ site.baseurl }}/images/2017-06-07-Introduction-to-Database-Storage-Engines/Rocksdb-icon.svg.png){:height="240x" width="240px"}
 
 RocksDB was begun at Facebook in April 2012, as a fork of LevelDB and it's open-source as well.
 
