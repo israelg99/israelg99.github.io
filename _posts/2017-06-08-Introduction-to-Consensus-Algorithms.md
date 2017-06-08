@@ -26,7 +26,7 @@ Raft solves the consensus problem by having a leader node in a cluster, all chan
 #### Let's get more technical
 Raft achieves consensus via an elected leader.  
 A node in a raft cluster is either a leader, a candidate, or a follower.  
-The leader regularly informs the followers of its existence by sending a heartbeat messages.
+The leader regularly informs the followers of its existence by sending heartbeat messages.  
 Each follower has a timeout (around 200 ms) in which it expects the heartbeat from the leader.  
 The timeout is reset on receiving the heartbeat.  
 If no heartbeat is received the follower changes its status to candidate and starts a new leader election.
