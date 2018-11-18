@@ -107,5 +107,6 @@ This concludes the post for face recognition, in the next posts I'll explain:
 * How to compare faces (check if a face is of someone).
 * Gender classification.
 * Locating facial features (eyes, mouth, nose, tongue, ears, hair and such...).
+* Sentiment analysis.
 
 But until next time, happy hacking.
