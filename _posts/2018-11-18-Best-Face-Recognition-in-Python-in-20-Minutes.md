@@ -8,7 +8,7 @@ Sometimes you just need face recognition, right now.
 And I'll show you the quickest way to add face recognition to your project, which works, surprsingly - really well.
 
 ### Requirements
-First, we'll need to install this repository: https://github.com/ageitgey/face_recognition.  
+First, we'll need to install this repository: [https://github.com/ageitgey/face_recognition](https://github.com/ageitgey/face_recognition).  
 To do that, make sure you install `dlib` according to [this instructions](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf).  
 Then simply run `pip3 install face_recognition` (or `pip2` if you're using Python 2).
 
@@ -25,9 +25,9 @@ img = img.resize((800, 600), Image.ANTIALIAS)
 img = img.convert('RGB')
 img.show()
 ```
-We resize our image to `800x600` to make the face recognition faster without affecting accuracy at all - should take around 2 seconds.
+We resize our image to `800x600` to make the face recognition faster without affecting accuracy at all.
 
-Let's get the face locations in the image using the `face_recognition` lib we installed above:
+Let's get the face locations in the image using the `face_recognition` lib we installed above - should take around 2 seconds:
 ```python
 import numpy as np
 import face_recognition
