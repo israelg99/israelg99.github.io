@@ -40,4 +40,4 @@ However, this training procedure is quite computationally expensive given a larg
 ### Conclusion
 Word embeddings contain the potential of being very useful, even fundamental to many NLP tasks, not only traditional text, but also genes, programming languages*(seriously, has anyone tried that?)*, and other types of langauges.  
 
-We are just scratching the surface, I suggest you to check out my [Word2Vec](https://israelg99.github.io/2017-03-23-Word2Vec/) post for a great word embeddings example.
+We are just scratching the surface, I suggest you to check out my [Word2Vec](https://israelg99.github.io/2017-03-23-Word2Vec-Explained/) post for a great word embeddings example.
